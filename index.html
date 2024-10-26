@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>DMMP</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <style>
+    .pretty-number {
+      display: inline-block;
+      background-color: #000000; /* Choose a color */
+      color: white;
+      font-weight: bold;
+      font-size: 1.0em;
+      width: 1.5em;
+      height: 1.5em;
+      line-height: 1.5em;
+      text-align: center;
+      border-radius: 40%; /* Makes the background circular */
+      margin-right: 8px; /* Adds spacing between number and text */
+    }
+  </style>
+  
+  <style>
+    .pretty-exclamation {
+      display: inline-block;
+      background-color: #ff0000;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 1.2em;
+      padding: 2px 12px;
+      border-radius: 30%;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      margin-right: 8px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://www.gabe-yhlee.com">
+        <span class="icon">
+            <i class="fas fa-home"></i>
+        </span>
+        </a>
+  
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://www.youtube.com/watch?v=I0445IET0FY">
+              MMP tutorial (ICRA 2024)
+            </a>
+            <a class="navbar-item" href="https://proceedings.mlr.press/v229/lee23a.html">
+              EMMP (CoRL 2023)
+            </a>
+            <a class="navbar-item" href="https://mmpplusplus.github.io/">
+              MMP++ (T-RO 2024)
+            </a>
+            <a class="navbar-item" href="https://mmflowp.github.io/">
+              MMFP (Arxiv)
+            </a>
+            <a class="navbar-item" href="https://diffmmp.github.io/">
+              DMMP (Arxiv)
+            </a>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            
+            <!-- Title. -->
+            <h1 class="title is-2 publication-title">Trajectory Manifold Optimization for Fast and Adaptive Kinodynamic Motion Planning</h1>
+            <p class="subtitle">Under review</p>
+            
+            <!-- Authors. -->
+            <div class="is-size-5 publication-authors">
+              </span>
+              <span class="author-block">
+                <a href="https://www.gabe-yhlee.com">Yonghyeon Lee</a>
+              </span>
+            </div>
+  
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Korea Institute For Advanced Study</span>
+            </div>
+  
+            <!-- Icons. -->
+            <div class="column has-text-centered">
+              <div class="publication-links">
+  
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2410.12193"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+  
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://diffmmp.github.io/"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Coming soon)</span>
+                    </a>
+                </span>
+  
+              </div>
+            </div>
+            
+            <!-- Blank. -->
+            <div class="columns is-centered">
+              <div class="content">
+                <h2 class="title is-3"></h2>
+              </div>            
+            </div>
+  
+            <!-- TL;DR. -->
+            <div class="columns is-centered has-text-justified interpolation-panel" 
+                 style="max-width: 1000px; background-color: #f5f5f5;">
+              <div class="column is-full-width">
+                <p style="color: #333333; font-size: 1.25em; font-weight: bold;">
+                  TL;DR: We propose a two-step method for fast kinodynamic motion planning: 
+                  (i) learning a manifold of task-relevant trajectories that satisfy kinodynamic constraints offline, 
+                  and (ii) searching for a trajectory within this manifold online, enabling the system to adapt to dynamic environments.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Video. -->
+            <div class="columns is-left" style="margin-top: 40px;">
+              <div class="content">
+                <h2 class="title is-4">Example: Throwing with a 7-DoF Robot Arm</h2>
+              </div>            
+            </div>
+  
+            <div class="columns is-centered">
+              <div class="column has-text-centered">
+                <div class="content">
+                  <p2 class="title is-6">Throwing to a nearby target</p2> <br> 
+                  <video id="sd" autoplay controls muted loop playsinline style="height: 300px; margin-top: 0px;">
+                    <source src="./assets/videos/data_throwing_close.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+              </div>
+  
+              <div class="column has-text-centered">
+                <div class="content">
+                  <p2 class="title is-6">Throwing to a distant target</p2> <br> 
+                  <video id="sd" autoplay controls muted loop playsinline style="height: 300px; margin-top: 0px;">
+                    <source src="./assets/videos/data_throwing_far.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+            
+            <div class="columns is-centered">
+              <div class="column has-text-centered">
+                <div class="content">
+                  <p2 class="title is-6">DMMP: Fast Generation of Throwing Trajectories <br> (Gray → Deep Red → Transparent Red)</p2> <br> 
+                  <video id="sd" autoplay controls muted loop playsinline style="height: 500px; margin-top: 20px;">
+                    <source src="./assets/videos/gen.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+            
+            <div class="columns is-centered">
+              <div class="column has-text-centered">
+                <div class="content" style="margin-top: 10px;">
+                  <h2 class="title is-6">Online Adaptation to Dynamic Target Changes</h2>
+                </div>    
+              </div>     
+            </div>
+
+            <div class="columns is-centered">
+              <div class="column has-text-centered">
+                <div class="content">
+                  <video id="sd" autoplay controls muted loop playsinline style="height: 350px; margin-top: 0px;">
+                    <source src="./assets/videos/Adaptation_1.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+              </div>
+  
+              <div class="column has-text-centered">
+                <div class="content">
+                  <video id="sd" autoplay controls muted loop playsinline style="height: 350px; margin-top: 0px;">
+                    <source src="./assets/videos/Adaptation_2.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+  
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Fast kinodynamic motion planning is crucial for systems to effectively adapt to 
+              dynamically changing environments. Despite some efforts, existing approaches still 
+              struggle with rapid planning in high-dimensional, complex problems. Not surprisingly, 
+              the primary challenge arises from the high-dimensionality of the search space, 
+              specifically the trajectory space. We address this issue with a two-step method: 
+              initially, we identify a lower-dimensional trajectory manifold <i>offline</i>, 
+              comprising diverse trajectories specifically relevant to the task at hand while 
+              meeting kinodynamic constraints. Subsequently, we search for solutions within this 
+              manifold <i>online</i>, significantly enhancing the planning speed. To encode and generate 
+              a manifold of continuous-time, differentiable trajectories, we propose a novel neural network model, 
+              <i>Differentiable Motion Manifold Primitives (DMMP)</i>, along with a practical training strategy. 
+              Experiments with a 7-DoF robot arm tasked with dynamic throwing to arbitrary target positions 
+              demonstrate that our method surpasses existing approaches in planning speed, task success, and constraint satisfaction.
+            </p>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Summary</h2>
+      </div>
+      
+      <div class="columns is-left" style="margin: 40px;">
+        <h2 class="title is-4"><span class="pretty-number">1</span> Challenging Kinodynamic Motion Planning</h2>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <p style="color: #333333; font-size: 1.2em;">
+          &#8226 Planning problems that require the robot to fully utilize its kinodynamic limits 
+          to complete a task are particularly challenging, <strong>taking a long time to solve</strong>.
+        </p>
+      </div>
+      <div class="content is-centered has-text-centered" style="margin: 40px;">
+        <video id="sd" autoplay controls muted loop playsinline style="height: 350px; margin-top: 0px;">
+          <source src="./assets/videos/challenging_kinodynamic_planning.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <p style="color: #333333; font-size: 0.8em;">
+          The left GIF is adopted from the <a href="https://www.youtube.com/watch?v=SUmahiaY_b8">Timur Garipov’s project video</a> on Robotic Arm Weightlifting via Trajectory Optimization in YouTube.
+        </p>
+      </div>
+      
+      <div class="columns is-left" style="margin: 40px;">
+        <h2 class="title is-4"><span class="pretty-number">2</span> Planning in Dynamic Environments</h2>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <p style="color: #333333; font-size: 1.2em;">
+          &#8226 As a concrete example, we will work through the dynamic throwing task.
+        </p>
+      </div>
+      <div class="content is-centered has-text-centered" style="margin: 40px;">
+        <video id="sd" autoplay controls muted loop playsinline style="height: 350px; margin-top: 0px;">
+          <source src="./assets/videos/dynamic_planning.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Citation. -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Citation</h2>
+    <pre><code>
+      @article{lee2024trajectory,
+        title={Trajectory Manifold Optimization for Fast and Adaptive Kinodynamic Motion Planning},
+        author={Lee, Yonghyeon},
+        journal={arXiv preprint arXiv:2410.12193},
+        year={2024}
+      }
+    </code></pre>
+  </div>
+</section>
+
+<!-- Footer. -->
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        Website template modified from <a href="https://nerfies.github.io/">NeRFies</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+
+</html>
