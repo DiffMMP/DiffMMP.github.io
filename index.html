@@ -40,6 +40,22 @@
   </style>
   
   <style>
+    .pretty-number-small {
+      display: inline-block;
+      background-color: #000000; /* Choose a color */
+      color: white;
+      font-weight: bold;
+      font-size: 1.0em;
+      width: 1.8em;
+      height: 1.8em;
+      line-height: 1.8em;
+      text-align: center;
+      border-radius: 40%; /* Makes the background circular */
+      margin-right: 8px; /* Adds spacing between number and text */
+    }
+  </style>
+
+  <style>
     .pretty-exclamation {
       display: inline-block;
       background-color: #ff0000;
@@ -282,13 +298,13 @@
       <div class="columns is-left" style="margin: 40px;">
         <h2 class="title is-4"><span class="pretty-number">1</span> Challenging Kinodynamic Motion Planning</h2>
       </div>
-      <div class="columns is-centered has-text-centered">
+      <div class="columns is-left has-text-left" style="margin-left: 40px;">
         <p style="color: #333333; font-size: 1.2em;">
           &#8226 Planning problems that require the robot to fully utilize its kinodynamic limits 
           to complete a task are particularly challenging, <strong>taking a long time to solve</strong>.
         </p>
       </div>
-      <div class="content is-centered has-text-centered" style="margin: 40px;">
+      <div class="content is-centered has-text-centered">
         <video id="sd" autoplay controls muted loop playsinline style="height: 350px; margin-top: 0px;">
           <source src="./assets/videos/challenging_kinodynamic_planning.mp4"
                   type="video/mp4">
@@ -296,21 +312,92 @@
       </div>
       <div class="columns is-centered has-text-centered">
         <p style="color: #333333; font-size: 0.8em;">
-          The left GIF is adopted from the <a href="https://www.youtube.com/watch?v=SUmahiaY_b8">Timur Garipov’s project video</a> on Robotic Arm Weightlifting via Trajectory Optimization in YouTube.
+          The left GIF is adopted from the 
+          <a href="https://www.youtube.com/watch?v=SUmahiaY_b8">Timur Garipov’s project video</a> 
+          on Robotic Arm Weightlifting via Trajectory Optimization in YouTube.
         </p>
       </div>
       
       <div class="columns is-left" style="margin: 40px;">
         <h2 class="title is-4"><span class="pretty-number">2</span> Planning in Dynamic Environments</h2>
       </div>
-      <div class="columns is-centered has-text-centered">
+      <div class="columns is-left has-text-left" style="margin-left: 40px;">
         <p style="color: #333333; font-size: 1.2em;">
           &#8226 As a concrete example, we will work through the dynamic throwing task.
         </p>
       </div>
-      <div class="content is-centered has-text-centered" style="margin: 40px;">
+      <div class="content is-centered has-text-centered">
         <video id="sd" autoplay controls muted loop playsinline style="height: 350px; margin-top: 0px;">
           <source src="./assets/videos/dynamic_planning.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+
+      <div class="columns is-left has-text-left" style="margin-left: 40px;">
+        <p style="color: #333333; font-size: 1.2em;">
+          <strong>Trajectorie Optimization</strong>: Given an analytic inverse dynamics equation, 
+          we have a nonlinear and nonconvex objective function \( J(q(t);\tau) \) 
+          &mdash; where the task variable \( \tau \) is the target box position and the joint trajectory \( q(t) \) is an optimization variable 
+          &mdash; and constraints \( C(q, \dot{q}, \ddot{q}, \dddot{q}) \leq 0 \) for all \( t \).
+        </p>
+      </div>
+      <div class="content is-centered has-text-centered">
+        <image src="./assets/figures/CTO.png" style="width: 100%;"></image>
+      </div>
+      <div class="columns is-left has-text-left" style="margin-left: 120px;">
+        <p style="color: #333333; font-size: 0.8em;">
+          Adam: Adaptive Moment Estimation (Kingma et al., International Conference on Learning Representations 2015) <br>
+          COBYLA: Constrained Optimization BY Linear Approximation (Powell., Advances in Optimization and Numerical Analysis 1994) <br> 
+          SLSQP: Sequential Least SQuares Programming (Kraft., Tech. Rep. DFVLR-FB 88-28 1988) 
+        </p>
+      </div>
+
+      <div class="columns is-left" style="margin-left: 40px; margin-top: 30px;">
+        <p2 style="color: #ff0000; font-size: 1.2em;">
+          <span class="pretty-exclamation">!</span>Conventional trajectory optimization algorithms are 
+          <strong style="color: #ff0000;">too slow</strong> for online replanning and sometimes 
+          <strong style="color: #ff0000;">fail</strong> 
+          depending on the initialization in challenging kinodynamic planning problems.
+        </p2>
+      </div>
+
+      <div class="columns is-left" style="margin: 40px;">
+        <h2 class="title is-4"><span class="pretty-number">3</span> How can humans perform fast planning?
+        </h2>
+      </div>
+      <p style="color: #333333; font-size: 1.2em; margin-left: 40px;">
+        &#8226 Through experience, we have learned <strong>motor patterns relevant to throwing motions</strong>, 
+        and these are <strong>encoded in our muscle memory</strong>.
+      </p>
+      <div class="content is-centered has-text-centered" style="margin-top: 40px;">
+        <image src="./assets/figures/humans.png" style="width: 70%;"></image>
+      </div>
+      <div class="columns is-left has-text-left" style="margin-left: 150px;">
+        <p style="color: #333333; font-size: 0.8em;">
+          Images are generated by ChatGPT 4o. 
+        </p>
+      </div>
+
+      <div class="columns is-left" style="margin: 40px;">
+        <h2 class="title is-4"><span class="pretty-number">4</span> 
+          Key Idea: Learning a trajectory manifold <i>offline</i>, Planning within it <i>online</i>
+        </h2>
+      </div>
+      <div class="content is-centered has-text-centered">
+        <image src="./assets/figures/key_idea.png" style="width: 80%;"></image>
+      </div>
+      <div class="columns is-left has-text-left" style="margin: 40px;">
+        <p style="color: #333333; font-size: 1.2em;">
+          <strong>Four-Step Training Method</strong>: <br>
+          <span style="margin: 10px;">1. Data collection via trajectory optimizations <br></span>
+          <span style="margin: 10px;">2. Differentiable motion manifold learning</span> <br>
+          <span style="margin: 10px;">3. Latent flow model learning via flow matching</span> <br>
+          <span style="margin: 10px;">4. Trajectory manifold optimization</span> 
+        </p>
+      </div>
+      <div class="content is-centered has-text-centered">
+        <video id="sd" autoplay controls muted loop playsinline style="height: 500px; margin-top: 0px;">
+          <source src="./assets/videos/four_step_training_method.mp4"
                   type="video/mp4">
         </video>
       </div>
