@@ -104,10 +104,10 @@
               MMP++ (T-RO 2024)
             </a>
             <a class="navbar-item" href="https://mmflowp.github.io/">
-              MMFP (Arxiv)
+              MMFP (RA-L 2025)
             </a>
             <a class="navbar-item" href="https://diffmmp.github.io/">
-              DMMP (Arxiv)
+              DMMP
             </a>
           </div>
         </div>
@@ -123,7 +123,7 @@
           <div class="column has-text-centered">
             
             <!-- Title. -->
-            <h1 class="title is-2 publication-title">Trajectory Manifold Optimization for Fast and Adaptive Kinodynamic Motion Planning</h1>
+            <h1 class="title is-2 publication-title">Differentiable Motion Manifold Primitives for Reactive Motion Generation under Kinodynamic Constraints</h1>
             <p class="subtitle">Under review</p>
             
             <!-- Authors. -->
@@ -135,7 +135,7 @@
             </div>
   
             <div class="is-size-5 publication-authors">
-              <span class="author-block">Korea Institute For Advanced Study</span>
+              <span class="author-block">Massachusetts Institute of Technology</span>
             </div>
   
             <!-- Icons. -->
@@ -144,12 +144,12 @@
   
                 <!-- PDF Link. -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2410.12193"
+                  <a href="https://diffmmp.github.io/"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                         <i class="fas fa-file-pdf"></i>
                     </span>
-                    <span>Paper</span>
+                    <span>Paper (Coming soon)</span>
                   </a>
                 </span>
   
@@ -270,19 +270,10 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Fast kinodynamic motion planning is crucial for systems to effectively adapt to 
-              dynamically changing environments. Despite some efforts, existing approaches still 
-              struggle with rapid planning in high-dimensional, complex problems. Not surprisingly, 
-              the primary challenge arises from the high-dimensionality of the search space, 
-              specifically the trajectory space. We address this issue with a two-step method: 
-              initially, we identify a lower-dimensional trajectory manifold <i>offline</i>, 
-              comprising diverse trajectories specifically relevant to the task at hand while 
-              meeting kinodynamic constraints. Subsequently, we search for solutions within this 
-              manifold <i>online</i>, significantly enhancing the planning speed. To encode and generate 
-              a manifold of continuous-time, differentiable trajectories, we propose a novel neural network model, 
-              <i>Differentiable Motion Manifold Primitives (DMMP)</i>, along with a practical training strategy. 
-              Experiments with a 7-DoF robot arm tasked with dynamic throwing to arbitrary target positions 
-              demonstrate that our method surpasses existing approaches in planning speed, task success, and constraint satisfaction.
+              Real-time motion generation -- which is essential for achieving reactive and adaptive behavior -- under kinodynamic constraints for high-dimensional systems is a crucial yet challenging problem.  
+              We address this with a two-step approach: <i>offline</i> learning of a lower-dimensional trajectory manifold of task‑relevant, constraint‑satisfying trajectories, followed by rapid <i>online</i> search within this manifold. 
+              Extending the discrete‑time Motion Manifold Primitives (MMP) framework, we propose <i>Differentiable Motion Manifold Primitives (DMMP)</i>, a novel neural network architecture that encodes and generates continuous‑time, differentiable trajectories, trained using data collected offline through trajectory optimizations, with a strategy that ensures constraint satisfaction -- absent in existing methods. 
+              Experiments on dynamic throwing with a 7‑DoF robot arm demonstrate that DMMP outperforms prior methods in planning speed, task success, and constraint satisfaction.
             </p>
           </div>
         </div>
@@ -406,7 +397,7 @@
   </section>
 
   <!-- Citation. -->
-<section class="section" id="BibTeX">
+<!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title is-3">Citation</h2>
     <pre><code>
@@ -418,7 +409,7 @@
       }
     </code></pre>
   </div>
-</section>
+</section> -->
 
 <!-- Footer. -->
 <footer class="footer">
